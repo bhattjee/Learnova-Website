@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="../images/logo.png" />
+<title>Learnova — Full Tech Stack Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ln-blue: #1D4ED8;
+    --ln-red: #EF4444;
+    --ln-green: #058E61;
+    --ln-surface: #f4f4f5;
+    --ln-card: #fafafa;
+    --ln-muted: rgba(255, 255, 255, 0.72);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+    font-size: 1.125rem;
+    line-height: 1.55;
+  }
+
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .site-nav-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1rem;
+    padding: 0.625rem 1rem;
+    min-height: 4.5rem;
+  }
+  @media (min-width: 1024px) {
+    .site-nav-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+  }
+  .site-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .site-nav-brand img { height: 2.75rem; width: auto; border-radius: 0.75rem; }
+  .site-nav-brand span { font-size: 1.625rem; font-weight: 700; color: var(--ln-blue); letter-spacing: -0.02em; }
+  .site-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  @media (min-width: 640px) {
+    .site-nav-links { font-size: 0.8125rem; gap: 1rem 2rem; }
+  }
+  @media (min-width: 1024px) {
+    .site-nav-links { font-size: 0.9375rem; gap: 1.25rem 2.5rem; }
+  }
+  .site-nav-links a {
+    color: var(--ln-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .site-nav-links a:hover { color: #fff; }
+  .site-nav-links a.nav-current {
+    color: var(--ln-blue);
+  }
+
+  .tech-plan-main {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+  }
+  @media (min-width: 640px) {
+    .tech-plan-main { padding: 1.5rem 1.5rem 3rem; }
+  }
+
+  h1 { font-size: clamp(1.75rem, 3.2vw, 2.375rem); font-weight: 700; margin-bottom: 0.35rem; color: #fff; line-height: 1.15; }
+  .subtitle { font-size: 1.0625rem; color: var(--ln-muted); margin-bottom: 1.75rem; line-height: 1.55; max-width: 48rem; }
+
+  /* Bento-style stack summary: symmetrical grid, off-white tray */
+  .stack-bento {
+    background: #fafafa;
+    border: 1px solid #e4e4e7;
+    border-radius: 2.5rem;
+    padding: 1.25rem;
+    margin-bottom: 1.75rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+  @media (min-width: 640px) {
+    .stack-bento { padding: 1.5rem 1.25rem; }
+  }
+  @media (min-width: 1024px) {
+    .stack-bento { padding: 1.75rem 1.5rem; }
+  }
+
+  .stack-summary {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+  @media (min-width: 640px) {
+    .stack-summary { gap: 1rem; }
+  }
+  /* 10 tiles → 5 × 2 symmetric rows on large screens */
+  @media (min-width: 900px) {
+    .stack-summary {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1rem 1rem;
+    }
+  }
+
+  .summary-chip {
+    background: #ffffff;
+    border: 1px solid #e4e4e7;
+    border-radius: 1.25rem;
+    padding: 1rem 0.75rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 6.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  @media (min-width: 900px) {
+    .summary-chip {
+      min-height: 7.25rem;
+      padding: 1.125rem 0.875rem;
+    }
+  }
+  .summary-chip:hover {
+    border-color: #c4c4cc;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+  .chip-layer {
+    font-size: 0.6875rem;
+    color: #71717a;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  @media (min-width: 900px) {
+    .chip-layer { font-size: 0.75rem; }
+  }
+  .chip-tech {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #18181b;
+    line-height: 1.35;
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
+  }
+  @media (min-width: 900px) {
+    .chip-tech { font-size: 1rem; }
+  }
+
+  .tab-bar { display: flex; gap: 8px; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .tab {
+    font-size: 0.9375rem;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: var(--ln-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .tab:hover { border-color: rgba(255, 255, 255, 0.55); color: #fff; }
+  .tab.active {
+    background: var(--ln-blue);
+    color: #fff;
+    border-color: var(--ln-blue);
+    font-weight: 700;
+  }
+
+  .panel { display: none; }
+  .panel.active {
+    display: block;
+    background: var(--ln-surface);
+    border: 1px solid #d4d4d8;
+    border-radius: 1.25rem;
+    padding: 1.5rem 1.25rem 1.75rem;
+  }
+  @media (min-width: 640px) {
+    .panel.active { padding: 1.75rem 1.5rem 2rem; }
+  }
+
+  .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1rem; }
+  .tech-card {
+    background: var(--ln-card);
+    border: 1px solid #e4e4e7;
+    border-radius: 14px;
+    padding: 1.25rem 1.35rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+  .tech-name { font-size: 1.1875rem; font-weight: 700; color: #0a0a0a; margin-bottom: 4px; }
+  .tech-role { font-size: 0.9375rem; color: #52525b; margin-bottom: 14px; }
+  .section-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #71717a; margin: 14px 0 6px; }
+  .reason { font-size: 1.0625rem; color: #27272a; line-height: 1.65; }
+
+  .drawback-box {
+    background: var(--ln-red);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+  .fix-box {
+    background: var(--ln-green);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .drawback-box p { font-size: 0.9375rem; color: #fff; line-height: 1.55; margin: 0; }
+  .fix-box p { font-size: 0.9375rem; color: #fff; line-height: 1.55; margin: 0; }
+  .warn-label { font-weight: 700; }
+  .fix-label { font-weight: 700; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="site-nav-inner">
+    <a href="../index.html" class="site-nav-brand">
+      <img src="../images/logo.png" alt="" width="40" height="40" />
+      <span>Learnova</span>
+    </a>
+    <div class="site-nav-links">
+      <a href="../tour.html?role=learner">Learner</a>
+      <a href="../tour.html?role=instructor">Instructor</a>
+      <a href="../tour.html?role=admin">Admin</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../blog.html">Blog</a>
+      <a href="learnova_full_tech_plan.html" class="nav-current">Tech-Plan</a>
+    </div>
+  </div>
+</nav>
+
+<main class="tech-plan-main">
+
+<h1>Learnova — Full Tech Stack Plan</h1>
+<p class="subtitle">React + Vite · Python FastAPI · PostgreSQL · Local Dev Setup</p>
+
+<section class="stack-bento" aria-label="Technology stack overview">
+<div class="stack-summary">
+  <div class="summary-chip"><div class="chip-layer">Frontend</div><div class="chip-tech">React + Vite</div></div>
+  <div class="summary-chip"><div class="chip-layer">UI</div><div class="chip-tech">Tailwind + shadcn</div></div>
+  <div class="summary-chip"><div class="chip-layer">State</div><div class="chip-tech">Zustand + TanStack</div></div>
+  <div class="summary-chip"><div class="chip-layer">Backend</div><div class="chip-tech">Python FastAPI</div></div>
+  <div class="summary-chip"><div class="chip-layer">Auth</div><div class="chip-tech">JWT + bcrypt</div></div>
+  <div class="summary-chip"><div class="chip-layer">ORM</div><div class="chip-tech">SQLAlchemy</div></div>
+  <div class="summary-chip"><div class="chip-layer">Database</div><div class="chip-tech">PostgreSQL</div></div>
+  <div class="summary-chip"><div class="chip-layer">Files</div><div class="chip-tech">Cloudflare R2</div></div>
+  <div class="summary-chip"><div class="chip-layer">Dev DB UI</div><div class="chip-tech">pgAdmin 4</div></div>
+  <div class="summary-chip"><div class="chip-layer">Email</div><div class="chip-tech">Resend</div></div>
+</div>
+</section>
+
+<div class="tab-bar">
+  <button class="tab active" onclick="showTab('frontend', this)">Frontend</button>
+  <button class="tab" onclick="showTab('state', this)">State management</button>
+  <button class="tab" onclick="showTab('backend', this)">Backend</button>
+  <button class="tab" onclick="showTab('database', this)">Database</button>
+  <button class="tab" onclick="showTab('files', this)">Files &amp; email</button>
+  <button class="tab" onclick="showTab('deploy', this)">Deployment</button>
+</div>
+
+<!-- FRONTEND -->
+<div id="frontend" class="panel active">
+  <div class="tech-grid">
+    <div class="tech-card">
+      <p class="tech-name">React 18 + Vite</p>
+      <p class="tech-role">Core UI framework + build tool</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">React's component model maps directly to Learnova's repeated UI — course cards, lesson rows, quiz questions are all reusable components. Vite replaces Create React App and gives you instant hot reload even with large codebases. React Router v6 handles the admin vs learner split cleanly.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">SEO gap —</span> Public course pages render blank until JS loads. Search engines may not index your course catalog.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> For a hackathon, ignore it. In production, add React Helmet for meta tags or migrate the public-facing routes to Next.js later.</p></div>
+    </div>
+    <div class="tech-card">
+      <p class="tech-name">Tailwind CSS + shadcn/ui</p>
+      <p class="tech-role">Styling + component library</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">shadcn gives you pre-built accessible components you actually own — the quiz builder dialog, lesson editor popup, reporting table with column toggles, and kanban board all need complex UI that shadcn handles without fighting you. Tailwind keeps styles local so you never have CSS conflicts between admin and learner UI.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Learning curve —</span> shadcn requires understanding Radix UI primitives. The first dialog/sheet component takes time.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Use the shadcn CLI to add components one at a time. Start with Button, Dialog, and Tabs — you'll use these everywhere.</p></div>
+    </div>
+    <div class="tech-card">
+      <p class="tech-name">React Player</p>
+      <p class="tech-role">Video lesson player</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">The spec requires YouTube and Google Drive video embeds in the full-screen player. React Player handles both URLs with a single component and zero configuration. Handles progress tracking callbacks needed for marking video lessons as complete.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Google Drive —</span> Drive embeds break when the file sharing settings change. Private files show an error.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Show a warning in the lesson editor when a Drive URL is entered. Recommend YouTube uploads for reliability.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- STATE -->
+<div id="state" class="panel">
+  <div class="tech-grid">
+    <div class="tech-card">
+      <p class="tech-name">Zustand</p>
+      <p class="tech-role">Client-side UI state</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">Manages ephemeral state that doesn't need to hit the server: current quiz answers before submission, sidebar open/closed in the full-screen player, active lesson index, points popup visibility. Far simpler than Redux — a Zustand store is just a plain JS object with setters.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">No persistence —</span> If the learner refreshes mid-quiz, their in-progress answers are lost.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Use Zustand's persist middleware to save quiz state to localStorage as a backup. On quiz start, check localStorage before initializing fresh state.</p></div>
+    </div>
+    <div class="tech-card">
+      <p class="tech-name">TanStack Query</p>
+      <p class="tech-role">Server state + API cache</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">Every API call in Learnova — course list, learner progress, reporting data — needs caching, loading states, and error handling. TanStack Query gives all three automatically. Marking a lesson complete triggers an optimistic update so the UI feels instant, then syncs with the server in the background.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Stale reporting —</span> The instructor reporting dashboard may show cached data that's minutes old when multiple learners are active.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Set staleTime: 0 and refetchInterval: 30000 on the reporting query so it auto-refreshes every 30 seconds.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- BACKEND -->
+<div id="backend" class="panel">
+  <div class="tech-grid">
+    <div class="tech-card">
+      <p class="tech-name">Python FastAPI</p>
+      <p class="tech-role">REST API server</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">FastAPI is async-native, meaning it handles multiple simultaneous learners saving progress without blocking. Auto-generates API docs at /docs — invaluable when building both frontend and backend simultaneously. Pydantic models validate quiz payloads, course forms, and enrollment data automatically.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Async pitfall —</span> Mixing sync SQLAlchemy calls inside async FastAPI routes causes deadlocks and slow responses.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Use SQLAlchemy's async session (AsyncSession) throughout, or use run_in_executor to safely call sync DB code from async routes.</p></div>
+    </div>
+    <div class="tech-card">
+      <p class="tech-name">SQLAlchemy + Alembic</p>
+      <p class="tech-role">ORM + database migrations</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">SQLAlchemy maps your Python classes directly to database tables — Course, Lesson, Quiz, Progress, Enrollment. Alembic handles schema migrations so when you add a new column (like badge_level to users), it updates the DB without destroying existing data.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Migration conflicts —</span> If two developers add migrations simultaneously, Alembic's history chain breaks and you get errors on deploy.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> One person owns migrations during the hackathon. Always run alembic upgrade head before starting work each session.</p></div>
+    </div>
+    <div class="tech-card">
+      <p class="tech-name">JWT + bcrypt</p>
+      <p class="tech-role">Authentication + passwords</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">Three roles (Admin, Instructor, Learner) need different access levels. JWT tokens carry the role claim so every API route can check permissions without hitting the database. bcrypt hashes passwords securely on registration. python-jose handles JWT encoding/decoding.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">No token revocation —</span> If an instructor is removed, their JWT stays valid until it expires. No instant logout across devices.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Keep token expiry short (1 hour). For a hackathon this is acceptable. In production, add a Redis-based token blocklist.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- DATABASE -->
+<div id="database" class="panel">
+  <div class="tech-grid">
+    <div class="tech-card">
+      <p class="tech-name">PostgreSQL</p>
+      <p class="tech-role">Primary database</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">Handles concurrent quiz submissions from multiple learners. ACID transactions ensure that when a quiz completes, the score, total points, and badge level all update atomically — never partially. The reporting dashboard runs complex JOINs across users, courses, and progress that PostgreSQL optimizes well. You already have it via pgAdmin 4.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Local-only risk —</span> Your pgAdmin 4 runs locally. If you demo on a different machine, there's no database.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Push to Neon (free cloud PostgreSQL) before any demo. Keep local DB for development, Neon for the live presentation. One env variable swap.</p></div>
+    </div>
+    <div class="tech-card">
+      <p class="tech-name">pgAdmin 4</p>
+      <p class="tech-role">Database GUI (dev only)</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">Lets you visually inspect tables during development — check that quiz attempt records are saving correctly, verify progress percentages are calculating right, write ad-hoc SQL to test reporting queries before building the API. Huge time saver when debugging data issues.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Dev tool only —</span> pgAdmin is not part of the deployed app. It only helps you locally.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> That's by design — it's your development companion, not production infrastructure. Use it freely.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- FILES & EMAIL -->
+<div id="files" class="panel">
+  <div class="tech-grid">
+    <div class="tech-card">
+      <p class="tech-name">Cloudflare R2</p>
+      <p class="tech-role">File storage for uploads</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">Course cover images, lesson PDFs, document attachments, and additional resources all need object storage. R2 has zero egress fees (unlike S3) which matters when learners frequently download PDFs. S3-compatible API means you can use boto3 in Python with minimal config change. Free tier: 10GB storage.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Setup overhead —</span> Requires a Cloudflare account, bucket config, and API tokens. More setup than saving files to disk.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> For the first day of hacking, save uploads to a local /uploads folder. Swap to R2 before the demo with one boto3 client change.</p></div>
+    </div>
+    <div class="tech-card">
+      <p class="tech-name">Resend</p>
+      <p class="tech-role">Transactional email</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">The spec requires "Add Attendees" (invite by email) and "Contact Attendees" wizards. Resend's Python SDK sends emails in 3 lines of code. Free tier handles 3,000 emails/month — more than enough for a hackathon demo. Much simpler than configuring SMTP servers.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Domain verification —</span> Without a verified domain, emails land in spam or are limited to test addresses only.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Use Resend's sandbox mode for demos — it logs emails without actually sending them. Verify a domain only if real delivery is needed.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- DEPLOYMENT -->
+<div id="deploy" class="panel">
+  <div class="tech-grid">
+    <div class="tech-card">
+      <p class="tech-name">Vercel</p>
+      <p class="tech-role">Frontend hosting</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">Connects to your GitHub repo and auto-deploys on every push. React + Vite apps deploy in under 2 minutes. Free tier, global CDN, custom domains. For the hackathon demo, push once and share the URL.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Frontend only —</span> Vercel cannot host your FastAPI backend. They are separate deployments.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Deploy FastAPI to Railway or Render (both free tier). Set VITE_API_URL in Vercel's environment variables to point to your Railway backend URL.</p></div>
+    </div>
+    <div class="tech-card">
+      <p class="tech-name">Railway</p>
+      <p class="tech-role">Backend + DB hosting</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">Deploys Python apps from a Procfile or Dockerfile with zero configuration. Free $5/month credit is enough for a hackathon. Can also host a PostgreSQL instance, giving you a cloud DB with one click — or point it at Neon for dedicated managed Postgres.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Cold starts —</span> Free tier apps sleep after inactivity. First request after sleep takes 10–20 seconds.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Use UptimeRobot (free) to ping your Railway URL every 5 minutes — keeps it warm. Or upgrade to paid ($5) the day of the demo.</p></div>
+    </div>
+    <div class="tech-card">
+      <p class="tech-name">Neon</p>
+      <p class="tech-role">Cloud PostgreSQL</p>
+      <div class="section-label">Why for Learnova</div>
+      <p class="reason">Serverless PostgreSQL with a generous free tier (0.5GB storage). You develop locally with pgAdmin 4, then swap one DATABASE_URL environment variable to point to Neon for the live demo. Your schema and data migrate instantly with alembic upgrade head.</p>
+      <div class="section-label">Drawback</div>
+      <div class="drawback-box"><p><span class="warn-label">Also sleeps —</span> Neon's free tier pauses the database after 5 minutes of inactivity, adding latency on first query.</p></div>
+      <div class="fix-box"><p><span class="fix-label">Fix —</span> Same UptimeRobot trick works. Or keep one API endpoint as a health check that Railway pings, which in turn wakes the Neon DB.</p></div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
