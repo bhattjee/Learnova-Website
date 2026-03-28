@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
     <link rel="apple-touch-icon" href="images/logo.png" />
     <title>Python Masterclass 2024 - Learnova</title>
+    <link rel="stylesheet" href="css/site-responsive.css" />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Source Sans Pro -->
@@ -43,28 +44,28 @@
         }
     </style>
 </head>
-<body class="bg-white text-dark-gray font-sans">
+<body class="bg-white text-dark-gray font-sans overflow-x-hidden">
 
     <!-- Navbar (Same as index) -->
     <nav class="sticky top-0 z-50 bg-white border-b border-light-gray shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 min-h-16 flex flex-wrap items-center justify-between gap-3 py-3">
+            <a href="index.html" class="flex items-center gap-2 shrink-0 min-w-0">
                 <img src="images/logo.png" alt="" class="h-8 w-auto rounded-md" />
-                <span class="text-2xl font-bold text-primary">Learnova</span>
+                <span class="text-xl sm:text-2xl font-bold text-primary truncate">Learnova</span>
             </a>
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-sm font-medium text-primary">Courses</a>
-                <a href="blog.html" class="text-sm font-medium hover:text-primary transition-all">Blog</a>
-                <a href="Techplan/learnova_full_tech_plan.html" class="text-sm font-medium hover:text-primary transition-all">Tech-Plan</a>
-                <a href="about.html" class="text-sm font-medium hover:text-primary transition-all">About Us</a>
+            <div class="order-3 md:order-none w-full md:w-auto flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-8">
+                <a href="index.html" class="text-sm font-medium text-primary py-1">Courses</a>
+                <a href="blog.html" class="text-sm font-medium hover:text-primary transition-all py-1">Blog</a>
+                <a href="Techplan/learnova_full_tech_plan.html" class="text-sm font-medium hover:text-primary transition-all py-1">Tech-Plan</a>
+                <a href="about.html" class="text-sm font-medium hover:text-primary transition-all py-1">About Us</a>
             </div>
-            <div class="flex items-center gap-4">
-                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-primary text-xs font-bold border border-primary/20">JD</div>
+            <div class="flex items-center gap-4 shrink-0">
+                <div class="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-primary text-xs font-bold border border-primary/20">JD</div>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 py-10">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         
         <!-- Course Header -->
         <div class="bg-gray-50 rounded-2xl overflow-hidden border border-light-gray mb-10">
@@ -72,15 +73,15 @@
                 <div class="md:w-1/3 h-64 md:h-auto overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&auto=format&fit=crop" class="w-full h-full object-cover">
                 </div>
-                <div class="md:w-2/3 p-8 flex flex-col justify-center">
-                    <div class="flex gap-2 mb-4">
+                <div class="md:w-2/3 p-5 sm:p-8 flex flex-col justify-center min-w-0">
+                    <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-blue-100 text-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase">Programming</span>
                         <span class="bg-green-100 text-accent-green text-[10px] font-bold px-2 py-0.5 rounded uppercase">Verified</span>
                     </div>
-                    <h1 class="text-4xl font-bold mb-4">Python Masterclass 2024</h1>
-                    <p class="text-gray-500 mb-6 leading-relaxed">Master Python from scratch and master data visualization and machine learning algorithms. This comprehensive course covers everything from basics to advanced topics like AI and web scraping.</p>
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">Python Masterclass 2024</h1>
+                    <p class="text-gray-500 mb-6 leading-relaxed text-sm sm:text-base">Master Python from scratch and master data visualization and machine learning algorithms. This comprehensive course covers everything from basics to advanced topics like AI and web scraping.</p>
                     
-                    <div class="flex items-center gap-8 mb-8">
+                    <div class="flex flex-wrap items-center gap-6 sm:gap-8 mb-8">
                         <div>
                             <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Students</p>
                             <p class="font-bold">12,402 enrolled</p>
@@ -97,9 +98,9 @@
                         </div>
                     </div>
 
-                    <div class="flex items-center gap-4">
-                        <button type="button" data-learnova="courses" class="bg-primary text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition-all shadow-lg text-sm">Continue Learning</button>
-                        <button class="p-3 border border-light-gray rounded-lg hover:bg-white transition-all text-gray-400"><i data-lucide="heart" class="w-5 h-5"></i></button>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+                        <button type="button" data-learnova="courses" class="bg-primary text-white px-6 sm:px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition-all shadow-lg text-sm min-h-[48px] w-full sm:w-auto">Continue Learning</button>
+                        <button type="button" class="p-3 border border-light-gray rounded-lg hover:bg-white transition-all text-gray-400 min-h-[48px] min-w-[48px] flex items-center justify-center shrink-0 self-center sm:self-auto" aria-label="Save"><i data-lucide="heart" class="w-5 h-5"></i></button>
                     </div>
                 </div>
             </div>
@@ -117,10 +118,10 @@
                         <div class="h-full bg-accent-green w-[65%] shadow-[0_0_10px_rgba(5,142,97,0.3)]"></div>
                     </div>
                 </div>
-                <div class="flex items-center gap-4">
-                    <div class="flex border border-light-gray rounded-lg overflow-hidden">
-                        <button class="px-6 py-2 text-xs font-bold tab-btn active">Course Overview</button>
-                        <button class="px-6 py-2 text-xs font-bold tab-btn text-gray-400">Ratings & Reviews</button>
+                <div class="flex items-stretch sm:items-center gap-4 w-full md:w-auto">
+                    <div class="flex flex-col sm:flex-row border border-light-gray rounded-lg overflow-hidden w-full sm:w-auto">
+                        <button type="button" class="px-4 sm:px-6 py-2.5 text-xs font-bold tab-btn active text-center">Course Overview</button>
+                        <button type="button" class="px-4 sm:px-6 py-2.5 text-xs font-bold tab-btn text-gray-400 text-center border-t sm:border-t-0 sm:border-l border-light-gray">Ratings & Reviews</button>
                     </div>
                 </div>
             </div>
@@ -129,9 +130,9 @@
         <!-- Lessons Tab -->
         <div class="flex flex-col lg:flex-row gap-8">
             <div class="lg:w-2/3">
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-xl font-bold">Course Curriculum</h2>
-                    <div class="relative w-64">
+                <div class="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center mb-6">
+                    <h2 class="text-xl font-bold shrink-0">Course Curriculum</h2>
+                    <div class="relative w-full sm:w-64 max-w-md">
                          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
                          <input type="text" placeholder="Search lesson..." class="w-full bg-gray-50 border border-light-gray rounded-lg pl-10 pr-4 py-2 text-xs focus:ring-2 focus:ring-primary outline-none transition-all">
                     </div>

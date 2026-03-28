@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
     <link rel="apple-touch-icon" href="images/logo.png" />
     <title>Learning: Introduction to Syntax - Learnova</title>
+    <link rel="stylesheet" href="css/site-responsive.css" />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Source Sans Pro -->
@@ -44,18 +45,15 @@
         }
     </style>
 </head>
-<body class="bg-white text-dark-gray font-sans flex h-screen overflow-hidden">
+<body class="bg-white text-dark-gray font-sans flex flex-col lg:flex-row min-h-screen lg:h-screen lg:overflow-hidden overflow-x-hidden overflow-y-auto lg:overflow-y-hidden">
 
     <!-- Sidebar -->
-    <aside id="sidebar" class="w-80 bg-white border-r border-light-gray flex flex-col h-full z-30 transition-all duration-300">
-        <div class="p-6 border-b border-light-gray">
-            <div class="flex items-center justify-between mb-4">
-                <a href="course-detail.html" class="flex items-center gap-2 text-primary font-bold text-sm">
-                    <i data-lucide="chevron-left" class="w-4 h-4"></i> Back to Course
+    <aside id="sidebar" class="w-full lg:w-80 lg:max-w-[20rem] shrink-0 bg-white border-b lg:border-b-0 lg:border-r border-light-gray flex flex-col z-30 max-h-[min(42vh,320px)] lg:max-h-none lg:h-full min-h-0">
+        <div class="p-4 sm:p-6 border-b border-light-gray shrink-0">
+            <div class="flex items-center justify-between mb-4 gap-2">
+                <a href="course-detail.html" class="flex items-center gap-2 text-primary font-bold text-sm min-w-0">
+                    <i data-lucide="chevron-left" class="w-4 h-4 shrink-0"></i> <span class="truncate">Back to Course</span>
                 </a>
-                <button onclick="document.getElementById('sidebar').classList.add('-translate-x-full'); document.getElementById('sidebar').classList.add('w-0');" class="text-gray-400 hover:text-dark-gray transition-all">
-                    <i data-lucide="sidebar" class="w-5 h-5"></i>
-                </button>
             </div>
             <h2 class="font-bold text-lg leading-tight mb-2">Python Masterclass 2024</h2>
             <div class="flex items-center gap-2 text-xs font-bold text-accent-green mb-1">
@@ -67,7 +65,7 @@
             </div>
         </div>
 
-        <nav class="flex-1 overflow-y-auto">
+        <nav class="flex-1 overflow-y-auto min-h-0 overscroll-y-contain">
             <!-- Section 1 -->
             <div class="p-4 bg-gray-50 border-b border-gray-100">
                 <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Section 1: Foundations</p>
@@ -107,25 +105,22 @@
     </aside>
 
     <!-- Main Player Area -->
-    <main class="flex-1 flex flex-col overflow-hidden bg-gray-50">
+    <main class="flex-1 flex flex-col min-h-[50vh] lg:min-h-0 overflow-hidden bg-gray-50">
         <!-- Player Top Bar -->
-        <header class="h-14 bg-white border-b border-light-gray flex items-center justify-between px-8 shrink-0">
-            <div class="flex items-center gap-4">
-               <button onclick="document.getElementById('sidebar').classList.remove('-translate-x-full'); document.getElementById('sidebar').classList.remove('w-0');" class="text-gray-400 hover:text-dark-gray">
-                   <i data-lucide="sidebar" class="w-5 h-5"></i>
-               </button>
-               <img src="images/logo.png" alt="" class="h-7 w-auto" />
-               <h3 class="font-bold text-sm">02. Introduction to Syntax</h3>
+        <header class="min-h-14 bg-white border-b border-light-gray flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between px-4 sm:px-6 lg:px-8 py-3 shrink-0">
+            <div class="flex items-center gap-3 min-w-0">
+               <img src="images/logo.png" alt="" class="h-7 w-auto shrink-0" />
+               <h3 class="font-bold text-sm truncate">02. Introduction to Syntax</h3>
             </div>
-            <div class="flex items-center gap-4 text-xs font-bold text-gray-400">
-                <button class="flex items-center gap-2 hover:text-primary transition-all"><i data-lucide="star" class="w-4 h-4"></i> Rate Course</button>
-                <div class="w-[1px] h-4 bg-gray-200"></div>
-                <button class="flex items-center gap-2 hover:text-primary transition-all"><i data-lucide="help-circle" class="w-4 h-4 text-accent-purple"></i> Questions?</button>
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-bold text-gray-400">
+                <button type="button" class="flex items-center gap-2 hover:text-primary transition-all py-1 min-h-[40px]"><i data-lucide="star" class="w-4 h-4 shrink-0"></i> Rate</button>
+                <div class="hidden sm:block w-px h-4 bg-gray-200 shrink-0"></div>
+                <button type="button" class="flex items-center gap-2 hover:text-primary transition-all py-1 min-h-[40px]"><i data-lucide="help-circle" class="w-4 h-4 text-accent-purple shrink-0"></i> Help</button>
             </div>
         </header>
 
         <!-- Viewer Area -->
-        <div class="flex-1 overflow-y-auto p-8 flex flex-col items-center">
+        <div class="flex-1 overflow-y-auto min-h-0 p-4 sm:p-6 lg:p-8 flex flex-col items-center">
             <div class="w-full max-w-5xl">
                 
                 <!-- Video Player Mockup -->
@@ -149,8 +144,8 @@
                 </div>
 
                 <!-- Lesson Info -->
-                <div class="bg-white rounded-2xl p-8 border border-light-gray shadow-sm">
-                    <h2 class="text-2xl font-bold mb-4">Mastering the Basics of Python</h2>
+                <div class="bg-white rounded-2xl p-5 sm:p-8 border border-light-gray shadow-sm">
+                    <h2 class="text-xl sm:text-2xl font-bold mb-4">Mastering the Basics of Python</h2>
                     <p class="text-gray-600 leading-relaxed mb-6">In this lesson, we will explore the core syntax of Python, including indentation rules, variables, and data types. This is the foundation of everything you will build later in the course.</p>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-gray-100">
@@ -180,14 +175,14 @@
         </div>
 
         <!-- Player Navigation Bar -->
-        <footer class="h-16 bg-white border-t border-light-gray flex items-center justify-between px-8 shrink-0">
-            <button class="flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-dark-gray transition-all">
-                <i data-lucide="chevron-left" class="w-4 h-4"></i> Previous Content
+        <footer class="min-h-16 bg-white border-t border-light-gray flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-2 shrink-0">
+            <button type="button" class="flex items-center justify-center gap-2 text-sm font-bold text-gray-400 hover:text-dark-gray transition-all min-h-[44px] w-full sm:w-auto">
+                <i data-lucide="chevron-left" class="w-4 h-4 shrink-0"></i> Previous
             </button>
-            <div class="flex items-center gap-3">
-                <button class="px-6 py-2 bg-accent-green text-white rounded-lg text-sm font-bold hover:bg-green-700 transition-all shadow-md">Complete Lesson</button>
-                <button class="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-blue-700 transition-all shadow-md">
-                    Next Content <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
+                <button type="button" class="px-4 sm:px-6 py-3 sm:py-2 bg-accent-green text-white rounded-lg text-sm font-bold hover:bg-green-700 transition-all shadow-md min-h-[44px] w-full sm:w-auto">Complete Lesson</button>
+                <button type="button" class="flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-blue-700 transition-all shadow-md min-h-[44px] w-full sm:w-auto">
+                    Next <i data-lucide="chevron-right" class="w-4 h-4 shrink-0"></i>
                 </button>
             </div>
         </footer>

@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
     <link rel="apple-touch-icon" href="images/logo.png" />
     <title>Course Editor - Python Masterclass 2024</title>
+    <link rel="stylesheet" href="css/site-responsive.css" />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Source Sans Pro -->
@@ -43,42 +44,42 @@
     </style>
 </head>
 
-<body class="bg-gray-50 text-dark-gray font-sans min-h-screen">
+<body class="bg-gray-50 text-dark-gray font-sans min-h-screen overflow-x-hidden">
 
     <!-- Header Actions -->
     <header class="bg-white border-b border-light-gray sticky top-0 z-30">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-4">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 min-h-16 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between py-3 lg:py-0 lg:h-16">
+            <div class="flex items-center gap-3 sm:gap-4 min-w-0">
                 <a href="admin-dashboard.html"
                     class="p-2 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-dark-gray transition-all">
                     <i data-lucide="arrow-left" class="w-5 h-5"></i>
                 </a>
                 <img src="images/logo.png" alt="" class="h-8 w-auto shrink-0" />
-                <div>
-                    <h1 class="font-bold text-lg leading-tight">Python Masterclass 2024</h1>
+                <div class="min-w-0">
+                    <h1 class="font-bold text-base sm:text-lg leading-tight truncate">Python Masterclass 2024</h1>
                     <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Draft · Last saved 2 mins
                         ago</p>
                 </div>
             </div>
 
-            <div class="flex items-center gap-3">
-                <div class="flex items-center gap-2 mr-4 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100">
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3 w-full lg:w-auto lg:justify-end">
+                <div class="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-lg border border-blue-100 w-full sm:w-auto justify-between sm:justify-start">
                     <span class="text-xs font-bold text-primary">Publish on website</span>
-                    <button class="w-10 h-5 bg-gray-200 rounded-full relative transition-all"
+                    <button type="button" class="w-10 h-5 bg-gray-200 rounded-full relative transition-all shrink-0"
                         onclick="this.classList.toggle('bg-primary'); this.children[0].classList.toggle('translate-x-5')">
                         <div class="absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full transition-all shadow-sm">
                         </div>
                     </button>
                 </div>
-                <button class="p-2 border border-light-gray rounded-lg hover:bg-gray-50 text-gray-500"
-                    title="Preview Learner View"><i data-lucide="eye" class="w-4 h-4"></i></button>
-                <button
-                    class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition-all shadow-lg flex items-center gap-2">
-                    <i data-lucide="users" class="w-4 h-4"></i>
-                    Manage Attendees
+                <button type="button" class="p-2.5 border border-light-gray rounded-lg hover:bg-gray-50 text-gray-500 min-h-[44px] min-w-[44px] flex items-center justify-center shrink-0"
+                    title="Preview Learner View" aria-label="Preview"><i data-lucide="eye" class="w-4 h-4"></i></button>
+                <button type="button"
+                    class="bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-700 transition-all shadow-lg flex items-center justify-center gap-2 min-h-[44px] flex-1 sm:flex-initial">
+                    <i data-lucide="users" class="w-4 h-4 shrink-0"></i>
+                    <span class="whitespace-nowrap">Manage Attendees</span>
                 </button>
-                <div class="h-8 w-[1px] bg-gray-200 mx-2"></div>
-                <button class="p-2 text-gray-400 hover:text-dark-gray"><i data-lucide="more-vertical"
+                <div class="hidden sm:block h-8 w-px bg-gray-200 mx-1"></div>
+                <button type="button" class="p-2.5 text-gray-400 hover:text-dark-gray min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="More"><i data-lucide="more-vertical"
                         class="w-5 h-5"></i></button>
             </div>
         </div>

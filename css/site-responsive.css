@@ -1,0 +1,16 @@
+/* Learnova – shared responsive baseline */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Safe default for inline media in prose areas */
+.prose-img-safe img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Wide tables / pre blocks: scroll instead of forcing page width */
+.overflow-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}

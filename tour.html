@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/logo.png" />
     <title id="tour-page-title">Product tour · Learnova</title>
+    <link rel="stylesheet" href="css/site-responsive.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
@@ -156,30 +157,47 @@
             border-bottom-color: #1D4ED8;
             font-weight: 800;
         }
+
+        /* One horizontal row of role links; scroll on narrow viewports (no vertical stacking) */
+        .tour-role-nav {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tour-role-nav::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 </head>
 
-<body class="bg-white text-dark-gray font-sans antialiased">
+<body class="bg-white text-dark-gray font-sans antialiased overflow-x-hidden">
 
     <header
         class="sticky top-0 z-50 border-b border-light-gray bg-white/95 backdrop-blur-xl">
-        <div class="mx-auto flex h-20 max-w-[1600px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-            <a href="index.html" class="flex shrink-0 items-center gap-2">
-                <img src="images/logo.png" alt="" class="h-9 w-auto rounded-xl" width="36" height="36" />
-                <span class="text-xl font-bold text-primary tracking-tighter">Learnova</span>
-            </a>
-            <nav class="flex flex-1 flex-wrap items-center justify-center gap-3 text-[10px] font-bold uppercase tracking-widest sm:gap-6 sm:text-xs lg:gap-10" aria-label="Role tours">
+        <div
+            class="mx-auto flex max-w-[1600px] flex-col px-4 py-3 sm:px-6 lg:h-20 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:px-8 lg:py-0">
+            <div class="flex min-w-0 items-center justify-between gap-3 lg:shrink-0">
+                <a href="index.html" class="flex min-w-0 items-center gap-2">
+                    <img src="images/logo.png" alt="" class="h-9 w-auto shrink-0 rounded-xl" width="36" height="36" />
+                    <span class="truncate text-lg font-bold text-primary tracking-tighter sm:text-xl">Learnova</span>
+                </a>
+                <a href="index.html"
+                    class="inline-flex shrink-0 items-center justify-center rounded-2xl border-2 border-light-gray px-3 py-2 text-xs font-bold text-dark-gray transition-colors hover:border-primary hover:text-primary min-h-[44px] min-w-[44px] sm:px-4 sm:text-sm lg:hidden"
+                    >Home</a>
+            </div>
+            <nav
+                class="tour-role-nav mt-3 flex min-h-[48px] w-full min-w-0 flex-nowrap items-center justify-start gap-4 overflow-x-auto overscroll-x-contain border-t border-light-gray/70 pt-3 pr-1 text-[10px] font-bold uppercase tracking-widest sm:gap-5 sm:pr-2 sm:text-xs lg:mt-0 lg:min-h-0 lg:flex-1 lg:justify-center lg:border-t-0 lg:pr-0 lg:pt-0 lg:[overflow:visible]"
+                aria-label="Role tours">
                 <a href="tour.html?role=learner" data-tour-role="learner"
-                    class="tour-nav-link rounded-t-lg px-2 py-1 text-dark-gray">Learner</a>
+                    class="tour-nav-link shrink-0 whitespace-nowrap rounded-t-lg px-1 py-2 text-dark-gray sm:px-2">Learner</a>
                 <a href="tour.html?role=instructor" data-tour-role="instructor"
-                    class="tour-nav-link rounded-t-lg px-2 py-1 text-dark-gray">Instructor</a>
+                    class="tour-nav-link shrink-0 whitespace-nowrap rounded-t-lg px-1 py-2 text-dark-gray sm:px-2">Instructor</a>
                 <a href="tour.html?role=admin" data-tour-role="admin"
-                    class="tour-nav-link rounded-t-lg px-2 py-1 text-dark-gray">Admin</a>
+                    class="tour-nav-link shrink-0 whitespace-nowrap rounded-t-lg px-1 py-2 text-dark-gray sm:px-2">Admin</a>
                 <a href="Techplan/learnova_full_tech_plan.html"
-                    class="tour-nav-link rounded-t-lg px-2 py-1 text-dark-gray">Tech-Plan</a>
+                    class="tour-nav-link shrink-0 whitespace-nowrap rounded-t-lg px-1 py-2 text-dark-gray sm:px-2">Tech-Plan</a>
             </nav>
             <a href="index.html"
-                class="shrink-0 rounded-2xl border-2 border-light-gray px-4 py-2 text-sm font-bold text-dark-gray hover:border-primary hover:text-primary transition-colors">
+                class="hidden shrink-0 rounded-2xl border-2 border-light-gray px-4 py-2 text-sm font-bold text-dark-gray transition-colors hover:border-primary hover:text-primary lg:inline-flex lg:items-center lg:justify-center lg:min-h-[44px]">
                 Home
             </a>
         </div>
@@ -192,7 +210,7 @@
         <div class="mx-auto flex max-w-[1600px] flex-col items-center gap-3 sm:flex-row sm:justify-between sm:px-4">
             <p id="tour-progress-text" class="text-sm font-semibold text-dark-gray">Step 1 of 1</p>
             <button type="button" id="tour-scroll-next"
-                class="group flex flex-col items-center gap-1 rounded-2xl border-2 border-primary bg-primary px-8 py-3 text-sm font-bold text-white shadow-lg shadow-primary/25 transition hover:bg-blue-800"
+                class="group flex w-full max-w-sm sm:max-w-none sm:w-auto flex-col items-center gap-1 rounded-2xl border-2 border-primary bg-primary px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-primary/25 transition hover:bg-blue-800 min-h-[52px]"
                 aria-label="Scroll to next screen">
                 <span data-next-label class="text-xs font-semibold uppercase tracking-wider opacity-90">Next screen</span>
                 <span class="tour-arrow-anim inline-flex" data-arrow-icon>

@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
     <link rel="apple-touch-icon" href="images/logo.png" />
     <title>About Us - Learnova</title>
+    <link rel="stylesheet" href="css/site-responsive.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -25,26 +26,28 @@
         }
     </script>
 </head>
-<body class="bg-white text-dark-gray font-sans">
-    <nav class="sticky top-0 z-50 bg-white border-b border-light-gray h-16 flex justify-between items-center px-8 shadow-sm">
-        <a href="index.html" class="flex items-center gap-2">
-            <img src="images/logo.png" alt="" class="h-8 w-auto rounded-md" />
-            <span class="text-xl font-bold text-primary">Learnova</span>
-        </a>
-        <div class="flex space-x-8 text-sm font-medium">
-            <a href="index.html" class="hover:text-primary transition-all">Home</a>
-            <a href="blog.html" class="hover:text-primary transition-all">Blog</a>
-            <a href="Techplan/learnova_full_tech_plan.html" class="hover:text-primary transition-all">Tech-Plan</a>
-            <a href="about.html" class="text-primary">About Us</a>
-            <a href="privacy.html" class="hover:text-primary transition-all">Privacy Policy</a>
+<body class="bg-white text-dark-gray font-sans overflow-x-hidden">
+    <nav class="sticky top-0 z-50 bg-white border-b border-light-gray shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-4 min-h-0">
+            <a href="index.html" class="flex items-center gap-2 shrink-0">
+                <img src="images/logo.png" alt="" class="h-8 w-auto rounded-md" />
+                <span class="text-xl font-bold text-primary">Learnova</span>
+            </a>
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-medium">
+                <a href="index.html" class="hover:text-primary transition-all py-1">Home</a>
+                <a href="blog.html" class="hover:text-primary transition-all py-1">Blog</a>
+                <a href="Techplan/learnova_full_tech_plan.html" class="hover:text-primary transition-all py-1">Tech-Plan</a>
+                <a href="about.html" class="text-primary py-1">About Us</a>
+                <a href="privacy.html" class="hover:text-primary transition-all py-1">Privacy Policy</a>
+            </div>
+            <button type="button" data-learnova="login" class="bg-primary text-white px-6 py-2.5 rounded-md text-sm font-semibold hover:bg-blue-700 transition-all w-full sm:w-auto min-h-[44px] shrink-0">Login</button>
         </div>
-        <button type="button" data-learnova="login" class="bg-primary text-white px-6 py-2 rounded-md text-sm font-semibold hover:bg-blue-700 transition-all">Login</button>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-4 py-20 text-center">
-        <h1 class="text-5xl font-bold mb-8">Empowering the world to learn</h1>
-        <p class="text-xl text-gray-500 leading-relaxed mb-12">Learnova was founded with a simple goal: to make premium education accessible to everyone, everywhere. We believe that learning is the key to personal and professional growth.</p>
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200" class="w-full rounded-3xl shadow-2xl mb-20 border border-light-gray">
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20 text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight">Empowering the world to learn</h1>
+        <p class="text-lg sm:text-xl text-gray-500 leading-relaxed mb-10 sm:mb-12">Learnova was founded with a simple goal: to make premium education accessible to everyone, everywhere. We believe that learning is the key to personal and professional growth.</p>
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200" alt="" class="w-full max-h-[50vh] sm:max-h-none object-cover rounded-2xl sm:rounded-3xl shadow-2xl mb-12 sm:mb-20 border border-light-gray">
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
             <div>

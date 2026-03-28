@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
     <link rel="apple-touch-icon" href="images/logo.png" />
     <title>Instructor Dashboard - Learnova</title>
+    <link rel="stylesheet" href="css/site-responsive.css" />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Source Sans Pro -->
@@ -43,10 +44,10 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-dark-gray font-sans flex h-screen overflow-hidden">
+<body class="bg-gray-50 text-dark-gray font-sans flex flex-col lg:flex-row min-h-screen lg:h-screen lg:overflow-hidden overflow-x-hidden overflow-y-auto lg:overflow-y-hidden">
 
     <!-- Sidebar -->
-    <aside class="w-64 bg-white border-r border-light-gray flex flex-col h-full z-30">
+    <aside class="w-full lg:w-64 shrink-0 bg-white border-b lg:border-b-0 lg:border-r border-light-gray flex flex-col z-30 lg:h-full lg:min-h-0">
         <div class="p-6">
             <a href="index.html" class="flex items-center gap-2">
                 <img src="images/logo.png" alt="" class="h-8 w-auto rounded-md" />
@@ -90,21 +91,21 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-1 flex flex-col overflow-hidden">
+    <main class="flex-1 flex flex-col min-h-[50vh] lg:min-h-0 overflow-hidden">
         <!-- Header -->
-        <header class="h-16 bg-white border-b border-light-gray flex items-center justify-between px-8 shrink-0">
-            <div class="flex items-center gap-4 flex-1">
-                <div class="relative w-96 max-w-full">
+        <header class="min-h-16 bg-white border-b border-light-gray flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between px-4 sm:px-6 lg:px-8 py-3 shrink-0">
+            <div class="flex items-center gap-4 flex-1 min-w-0 w-full">
+                <div class="relative w-full sm:max-w-md lg:w-96 lg:max-w-full">
                     <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
                     <input type="text" placeholder="Search courses by name..." class="w-full bg-gray-100 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary outline-none transition-all">
                 </div>
             </div>
-            <div class="flex items-center gap-4">
-                <div class="flex items-center bg-gray-100 rounded-lg p-1">
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                <div class="flex items-center bg-gray-100 rounded-lg p-1 shrink-0">
                     <button class="p-1.5 rounded-md bg-white shadow-sm text-primary"><i data-lucide="layout-grid" class="w-4 h-4"></i></button>
                     <button class="p-1.5 rounded-md text-gray-400 hover:text-dark-gray"><i data-lucide="list" class="w-4 h-4"></i></button>
                 </div>
-                <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition-all flex items-center gap-2 shadow-lg" onclick="document.getElementById('createModal').classList.remove('hidden')">
+                <button type="button" class="bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-lg min-h-[44px] flex-1 sm:flex-initial" onclick="document.getElementById('createModal').classList.remove('hidden')">
                     <i data-lucide="plus" class="w-4 h-4 text-white"></i>
                     Create Course
                 </button>
@@ -113,7 +114,7 @@
         </header>
 
         <!-- Dashboard Content -->
-        <div class="flex-1 overflow-y-auto p-8">
+        <div class="flex-1 overflow-y-auto min-h-0 p-4 sm:p-6 lg:p-8">
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center justify-between mb-8">
                     <div>
