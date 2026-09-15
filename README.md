@@ -17,7 +17,7 @@ A modern, responsive learning management system designed for learners, instructo
 
 ---
 
-## 📖 Overview
+## Overview
 
 Learnova is a comprehensive learning platform that unifies the educational experience for three key user roles:
 
@@ -25,7 +25,7 @@ Learnova is a comprehensive learning platform that unifies the educational exper
 - **Instructors**: Create and manage courses, analyze learner data, and scale their educational impact
 - **Administrators**: Oversee platform operations, manage users, and access comprehensive reporting
 
-## ✨ Key Features
+## Key Features
 
 ### For Learners
 - 🎯 **Course Discovery**: Browse and enroll in 180+ curated programs
@@ -47,7 +47,7 @@ Learnova is a comprehensive learning platform that unifies the educational exper
 - 🔐 **Role-based Access**: Granular permission controls
 - 🚨 **Alert System**: Urgent review notifications and action items
 
-## 🏗️ Architecture
+## Architecture
 
 ### Current Implementation
 - **Frontend**: Static HTML5 pages with Tailwind CSS
@@ -69,7 +69,7 @@ See the [Tech Plan](Techplan/learnova_full_tech_plan.html) for detailed architec
 - **Email Service**: Resend
 - **Deployment**: Vercel (frontend) + Railway (backend)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Learnova-Website/
@@ -103,7 +103,7 @@ Learnova-Website/
 └── tour.html                        # Interactive product tour
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - A modern web browser (Chrome, Firefox, Safari, Edge)
@@ -114,7 +114,7 @@ Learnova-Website/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/Learnova-Website.git
+   git clone https://github.com/bhattjee/Learnova-Website.git
    cd Learnova-Website
    ```
 
@@ -134,7 +134,7 @@ Learnova-Website/
    - Navigate through different user roles using the tour feature
    - Check the tech plan for implementation details
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
 ```css
@@ -157,7 +157,7 @@ Learnova-Website/
 - **Tablet**: 640px - 1024px
 - **Desktop**: > 1024px
 
-## 📱 Pages Overview
+## Pages Overview
 
 | Page | Description | Key Features |
 |------|-------------|--------------|
@@ -173,7 +173,7 @@ Learnova-Website/
 | `admin-reporting.html` | Analytics | Data visualization and reports |
 | `privacy.html` | Privacy policy | Legal information |
 
-## 🔧 Customization
+## Customization
 
 ### Updating Branding
 1. Replace `images/logo.png` and `images/logo.svg` with your logo
@@ -191,18 +191,18 @@ Learnova-Website/
 3. Add Tailwind CSS and Lucide Icons CDNs
 4. Update navigation links across existing pages
 
-## 🌐 Browser Support
+## Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -212,20 +212,20 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📞 Contact
+## Contact
 
 For questions, suggestions, or collaboration opportunities:
 - Open an issue on GitHub
 - Email: [Replace with your contact email]
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Tailwind CSS** for the utility-first CSS framework
 - **Lucide Icons** for the beautiful icon set
 - **Google Fonts** for Source Sans Pro typography
 - **Unsplash** for placeholder images
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] Migrate to React + Vite architecture
 - [ ] Implement FastAPI backend
